@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 const defaultAppContextValue = {
   theme: 'light',
+  clickCount: 0,
 }
 
 export const AppContext = React.createContext(defaultAppContextValue)

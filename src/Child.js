@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import {AppContext, SetAppContext} from './context'
+import {AppContext, SetAppContext} from './Hooks'
 
 const Child = () => {
   const context = useContext(AppContext)
@@ -20,7 +20,7 @@ const Child = () => {
 
   return (
     <div className={`child ${context.theme}`}>
-      <p>child</p>
+      <p>child 当前theme: {context.theme}</p>
       <button onClick={() => changeTheme()}>change theme</button>
     </div>
   )

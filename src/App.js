@@ -1,23 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
 } from 'react-router-dom'
-import { AppContextProvider } from './context'
+import { AppContextProvider, AppContext } from './Hooks'
+import HOCchild1 from './HOC/HocChild1'
+import HOCchild2 from './HOC/HocChild2'
+import { HocVsHook } from './HOC.vs.Hook'
 import Child from './Child'
-import MyHoc from './HOC/HOCComponent'
 
 
 const App = () => {
-
   return (
     <AppContextProvider>
       <div className="App">
         app
         <Child />
-        {/*<MyHoc foo="foo" bar="bar" baz="baz"/>*/}
+        <HOCchild1 name="child1"/>
+        <HOCchild2 name="child2"/>
+        <HocVsHook />
       </div>
     </AppContextProvider>
   )
